@@ -11,6 +11,7 @@ class ContextItem(BaseModel):
     category: str
     page: int
     text: str
+    rerank_score: float
 
 
 class SearchResponse(BaseModel):
