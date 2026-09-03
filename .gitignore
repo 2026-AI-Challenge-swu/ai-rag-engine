@@ -10,3 +10,7 @@ data/chunks/*
 
 storage/faiss/*
 storage/bm25/*
+# 배포용으로 미리 빌드된 인덱스는 예외적으로 커밋 (Render가 git 기준으로 빌드하므로 필요)
+!storage/faiss/index.faiss
+!storage/faiss/metadatas.pkl
+!storage/bm25/bm25.pkl
