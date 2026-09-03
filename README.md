@@ -1,3 +1,12 @@
+---
+title: ai-rag-engine
+emoji: 🔍
+colorFrom: blue
+colorTo: green
+sdk: docker
+app_port: 8001
+---
+
 # ai-rag-engine
 > **목적**  
 > Indexing, Retrieval, Reranker, Context 생성
