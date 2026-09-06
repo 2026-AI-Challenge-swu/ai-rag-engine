@@ -1,0 +1,16 @@
+name: Keep HF Space awake
+
+# Hugging Face Space(무료 CPU Basic 하드웨어)는 48시간 무동작이면 자동으로 슬립됨. 유료
+# 전환 전까지 공모전 심사 기간(2026-09-07~09-22) 동안 잠들지 않도록 주기적으로 핑을 보냄.
+# 30분 간격이면 48시간 한도 대비 충분히 여유 있어서, 액션 실행이 가끔 지연/스킵돼도 안전함.
+on:
+  schedule:
+    - cron: '7,37 * * * *'
+  workflow_dispatch: {}
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping HF Space
+        run: curl -sS -o /dev/null -w "HTTP %{http_code} in %{time_total}s\n" https://ningning39-ai-rag-engine.hf.space/
